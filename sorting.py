@@ -18,26 +18,26 @@ def selection_sort(numbers):
 
 
 def bubble_sort(numbers):
-    plt.ion()
-    plt.show()
     numbers_copy = numbers.copy()
     n = len(numbers_copy)
+    plt.ion()
+    plt.show()
     for num in range(n-1):
         for idx in range(n-1-num):
-            index_highlight1 = j
-            index_highlight2 = j + 1
-            colors = ["steelblue"] * len(values)
-            colors[index_highlight1] = "tomato"
-            colors[index_highlight2] = "tomato"
-            plt.clf()
-            plt.bar(range(len(values)), values, color=colors)
-            plt.title("Bubble Sort")
-            plt.pause(0.1)
-            if numbers_copy[num] > numbers_copy[num+1]:
-                numbers_copy[num], numbers_copy[num+1] = numbers_copy[num+1], numbers_copy[num]
+            if numbers_copy[idx] > numbers_copy[idx+1]:
+                numbers_copy[idx], numbers_copy[idx + 1] = numbers_copy[idx + 1], numbers_copy[idx]
+                index_highlight1 = idx
+                index_highlight2 = idx + 1
+                colors = ["steelblue"] * len(numbers_copy)
+                colors[index_highlight1] = "tomato"
+                colors[index_highlight2] = "tomato"
+                plt.clf()
+                plt.bar(range(len(numbers_copy)), numbers_copy, color=colors)
+                plt.title("Bubble Sort")
+                plt.pause(0.2)
+
     plt.ioff()
     plt.show()
-
     return numbers_copy
 
 
